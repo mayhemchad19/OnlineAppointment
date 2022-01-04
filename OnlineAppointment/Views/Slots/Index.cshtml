@@ -1,0 +1,45 @@
+﻿@model IEnumerable<OnlineAppointment.Models.Slot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableSlot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableSlot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SlotsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SlotsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SlotsID })
+        </td>
+    </tr>
+}
+
+</table>
